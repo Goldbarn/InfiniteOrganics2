@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Generator</title>
+  <link rel="stylesheet" href="/static/css/styleMonster.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Monster Generator</h1>
+    <div class="selection">
+      <h2>Select Up to 3 Items:</h2>
+      <ul id="item-list">
+        <li><input type="checkbox" value="Water"> Water</li>
+        <li><input type="checkbox" value="Fire"> Fire</li>
+        <li><input type="checkbox" value="Metal"> Metal</li>
+        <li><input type="checkbox" value="Wood"> Wood</li>
+        <li><input type="checkbox" value="Earth"> Earth</li>
+      </ul>
+      <button id="generate-btn">Generate Monster</button>
+    </div>
+    <div class="monster-list">
+      <h2>Generated Monsters:</h2>
+      <ul id="monster-list"></ul>
+    </div>
+  </div>
+  <script type='module' src="/static/js/scriptMonster.js"></script>
+  <button id="switchButtonMonsters" onclick="switchToTypes()">Go to Types</button>
+  <button id="switchButtonFight" onclick="switchToFight()">Go to Fight</button>
+  <button id="resetButton" onclick="resetColumns()">Reset to Default</button>
+</body>
+</html>

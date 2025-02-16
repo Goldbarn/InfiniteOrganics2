@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fight!</title>
+    <link rel="stylesheet" href="/static/css/styleFight.css">
+</head>
+<body>
+    <div class="container">
+        <div class="column" id="column1">
+            <div class="item" data-value="Item 1">Item 1</div>
+            <div class="item" data-value="Item 2">Item 2</div>
+            <div class="item" data-value="Item 3">Item 3</div>
+        </div>
+        <div class="column" id="column2">
+            <div class="item" data-value="Item A">Item A</div>
+            <div class="item" data-value="Item B">Item B</div>
+            <div class="item" data-value="Item C">Item C</div>
+        </div>
+    </div>
+    <button id="fightButton">Fight!</button>
+
+    <!-- Full-screen overlay for the result -->
+    <div id="resultOverlay" class="hidden">
+        <div class="versus-container">
+            <div class="item-container">
+                <div id="effectivenessDisplay">
+    <p>Effectiveness: <span id="effectivenessPercentage">100%</span></p>
+</div>
+                <h1 id="resultText1"></h1>
+                <p id="monster1HP"></p>
+                <div class="button-container" id="monster1Moves"></div>
+            </div>
+            <div class="item-container">
+                <h1 id="resultText2"></h1>
+                <p id="monster2HP"></p>
+                <div class="button-container" id="monster2Moves"></div>
+            </div>
+        </div>
+        <button id="endButton">End</button>
+    </div>
+
+    <script src="/static/js/scriptFight.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine Items</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+  </head>
+<body>
+
+  <div class="column" id="column1">
+    <h2>Type 1</h2>
+    <ul>
+      <li>Water</li>
+      <li>Fire</li>
+      <li>Metal</li>
+      <li>Wood</li>
+      <li>Earth</li>
+    </ul>
+  </div>
+
+  <div class="column" id="column2">
+    <h2>Type 2</h2>
+    <ul>
+      <li>Water</li>
+      <li>Fire</li>
+      <li>Metal</li>
+      <li>Wood</li>
+      <li>Earth</li>
+    </ul>
+  </div>
+
+  <div class="column" id="column3">
+    <h2>Preview</h2>
+    <div id="preview">Select types to combine...</div>
+    <button onclick="combineItems()">Combine</button>
+  </div>
+<button id="switchButtonMonsters" onclick="switchToMonsters()">Go to Monsters</button>
+<button id="switchButtonFight" onclick="switchToFight()">Go to Fight</button>
+<button id="resetButton" onclick="resetColumns()">Reset to Default</button>
+
+
+</body>
+</html>

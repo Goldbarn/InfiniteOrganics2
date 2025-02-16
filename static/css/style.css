@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-image: url('../wallpaper.jpg');
+  }
+  .column {
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    /* background-color: rgba(255, 0, 0, 0.5); */
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    color: #ccc
+  }
+  .column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .column li {
+    padding: 10px;
+    margin: 5px;
+    background-color: #404040;
+    cursor: pointer;
+    border-radius: 10px;
+    border-color: #8eadba;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .column li.selected {
+    background-color: #a0d8ef;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #preview {
+    font-style: italic;
+    color: #666;
+  }
+#switchButtonMonsters, #switchButtonFight, #resetButton, #switchButtonTypes {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#switchButtonMonsters {
+  top: 20px;
+  right: 20px;
+}
+
+#switchButtonFight {
+  top: 70px; /* Position the second button below the first one */
+  right: 20px;
+}
+
+#resetButton {
+  top: 120px; /* Position the third button below the first second */
+  right: 20px;
+}
+
+#switchButtonMonsters:hover, #switchButtonFight:hover, #resetButton:hover {
+  background-color: #0056b3;
+}
