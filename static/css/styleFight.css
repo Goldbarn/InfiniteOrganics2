@@ -116,3 +116,20 @@ body {
     text-align: center;
 }
 
+#moveDescriptionContainer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+#moveDescription {
+    margin: 0;
+}
+

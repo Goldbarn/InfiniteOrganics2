@@ -209,5 +209,23 @@ def genNameStatsInput():
     data = request.get_json()
     return jsonify({'result': genNameStats(data['monsterDesc'])})
 
+@app.route('/genMoveDescription', methods=['POST'])
+def genMoveDescription():
+    data = request.get_json()
+    attackerDesc = data.get('attackerDesc')
+    defenderDesc = data.get('defenderDesc')
+    attackType = data.get('attackType')
+    effectiveness = data.get('effectiveness')
+
+    try:
+        client = genai.Client(api_key=getAPIKey())
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=f"Attacker Description: {attackerDesc}\nDefender Description: {defenderDesc}\nAttack Type: {attackType}\nEffectiveness: {effectiveness}%\nDescribe what the move was like in a few sentences."
+        )
+        return jsonify({'result': response.text.strip()})
+    except Exception as e:
+        return jsonify({'result': str(e)})
+
 if __name__ == '__main__':
     app.run(ssl_context=('cert.pem', 'key.pem'), port=5000)

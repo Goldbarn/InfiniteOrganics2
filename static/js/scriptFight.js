@@ -138,38 +138,64 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to handle a move
-    async function handleMove(attacker, move) {
-        const defender = attacker === monster1 ? monster2 : monster1;
-        const attackType = move.split(" ")[0]; // Extract the attack type from the move text
+ // Function to handle a move
+async function handleMove(attacker, move) {
+    const defender = attacker === monster1 ? monster2 : monster1;
+    const attackType = move.split(" ")[0]; // Extract the attack type from the move text
 
-        // Calculate damage and effectiveness
-        const damage = await calculateDamage(attacker, defender, attackType);
-        defender.hp -= damage;
+    // Calculate damage and effectiveness
+    const damage = await calculateDamage(attacker, defender, attackType);
+    defender.hp -= damage;
 
-        // Update effectiveness display
-        effectivenessPercentage.textContent = `${lastMoveEffectiveness}%`;
+    // Update effectiveness display
+    effectivenessPercentage.textContent = `${lastMoveEffectiveness}%`;
 
-        if (defender.hp <= 0) {
-            defender.hp = 0;
-            endBattle(attacker);
-        }
+    // Generate and display move description
+    const moveDescription = await genMoveDescription(attacker.description, defender.description, attackType, lastMoveEffectiveness);
+    displayMoveDescription(moveDescription);
 
-        updateHP();
+    if (defender.hp <= 0) {
+        defender.hp = 0;
+        endBattle(attacker);
+    }
 
-        if (defender.hp > 0) {
-            // Switch turns
-            if (attacker === monster1) {
-                currentTurn = monster2;
-                monster1Moves.style.pointerEvents = 'none';
-                monster2Moves.style.pointerEvents = 'auto';
-            } else {
-                currentTurn = monster1;
-                monster2Moves.style.pointerEvents = 'none';
-                monster1Moves.style.pointerEvents = 'auto';
-            }
+    updateHP();
+
+    if (defender.hp > 0) {
+        // Switch turns
+        if (attacker === monster1) {
+            currentTurn = monster2;
+            monster1Moves.style.pointerEvents = 'none';
+            monster2Moves.style.pointerEvents = 'auto';
+        } else {
+            currentTurn = monster1;
+            monster2Moves.style.pointerEvents = 'none';
+            monster1Moves.style.pointerEvents = 'auto';
         }
     }
+}
+
+// Function to generate move description
+async function genMoveDescription(attackerDesc, defenderDesc, attackType, effectiveness) {
+    try {
+        const response = await fetch('https://localhost:5000/genMoveDescription', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ attackerDesc, defenderDesc, attackType, effectiveness })
+        });
+        const data = await response.json();
+        return data.result;
+    } catch (error) {
+        console.error('Error generating move description:', error);
+        return "An error occurred while generating the move description.";
+    }
+}
+
+// Function to display move description
+function displayMoveDescription(description) {
+    const moveDescriptionElement = document.getElementById("moveDescription");
+    moveDescriptionElement.textContent = description;
+}
 
     // Function to calculate damage
     async function calculateDamage(attacker, defender, attackType) {

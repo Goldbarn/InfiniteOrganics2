@@ -26,8 +26,8 @@
         <div class="versus-container">
             <div class="item-container">
                 <div id="effectivenessDisplay">
-    <p>Effectiveness: <span id="effectivenessPercentage">100%</span></p>
-</div>
+                    <p>Effectiveness: <span id="effectivenessPercentage">100%</span></p>
+                </div>
                 <h1 id="resultText1"></h1>
                 <p id="monster1HP"></p>
                 <div class="button-container" id="monster1Moves"></div>
@@ -38,11 +38,13 @@
                 <div class="button-container" id="monster2Moves"></div>
             </div>
         </div>
+        <!-- New element for displaying move description -->
+        <div id="moveDescriptionContainer">
+            <p id="moveDescription"></p>
+        </div>
         <button id="endButton">End</button>
     </div>
 
     <script src="/static/js/scriptFight.js"></script>
-    <button id="switchButtonMonsters" onclick="switchToTypes()">Go to Types</button>
-  <button id="switchButtonFight" onclick="switchToMonsters()">Go to Monsters</button>
 </body>
 </html>
