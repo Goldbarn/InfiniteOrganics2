@@ -3,7 +3,20 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    background-image: url('../wallpaper.jpg');
 }
+
+#switchButtonMonsters, #switchButtonFight, #resetButton, #switchButtonTypes {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
 .container {
     display: flex;
@@ -20,6 +33,7 @@ body {
     margin: 5px;
     border: 1px solid #ccc;
     cursor: pointer;
+    background-color: #ccc;
 }
 
 .item.selected {

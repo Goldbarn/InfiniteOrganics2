@@ -1,3 +1,11 @@
+function switchToMonsters() {
+    window.location.href = 'monsters.html';
+}  
+
+function switchToType() {
+  window.location.href = 'index.html';
+}  
+
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll(".item");
     const fightButton = document.getElementById("fightButton");
