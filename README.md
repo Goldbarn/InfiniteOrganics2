@@ -21,4 +21,4 @@ To use the program, you will need to get a [Google Gemini api key](https://ai.go
 \
 You will also need Python3, as well as Google-genai, Flask, and Flask-CORS from Python pip to run the app.\
 \
-To actually run it, you need to navigate into the folder, and run the file ai.py as a python3 file, then navigate to whatever localhost port it runs on, typically 5000.
+To actually run it, you need to extract the zip file, which holds the actual release, and run the file ai.py as a python3 file, then navigate to whatever localhost port it runs on, typically 5000.
