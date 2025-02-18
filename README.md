@@ -19,6 +19,6 @@ Each type has other types it is advantageous against, and ones it is weak agains
 
 To use the program, you will need to get a [Google Gemini api key](https://ai.google.dev/gemini-api/docs#python) and put it in the file called Put-Google-Gemini-API-Key-Here.txt\
 \
-You will also need Google-genai, Flask, Flask-CORS, and Python3 to run the app.\
+You will also need Python3, as well as Google-genai, Flask, and Flask-CORS from Python pip to run the app.\
 \
 To actually run it, you need to navigate into the folder, and run the file ai.py as a python3 file, then navigate to whatever localhost port it runs on, typically 5000.
